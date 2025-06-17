@@ -9,7 +9,8 @@
     "ignoreUnknown": false,
     "ignore": [
       "node_modules",
-      "dist"
+      "dist",
+      ".astro"
     ]
   },
   "formatter": {

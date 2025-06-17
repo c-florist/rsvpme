@@ -17,13 +17,13 @@ jobs:
         uses: actions/setup-node@39370e3970a6d050c480ffad4ff0ed4d3fdee5af
         with:
           node-version: 22.11
-          cache: 'npm'
+          cache: 'pnpm'
 
       - name: Install node modules
-        run: npm ci
+        run: pnpm ci
 
       - name: Run Biome check
-        run: npm run tidy:check
+        run: pnpm run tidy:check
 
   typecheck:
     name: Typecheck
@@ -36,10 +36,10 @@ jobs:
         uses: actions/setup-node@39370e3970a6d050c480ffad4ff0ed4d3fdee5af
         with:
           node-version: 22.11
-          cache: 'npm'
+          cache: 'pnpm'
 
       - name: Install node modules
-        run: npm ci
+        run: pnpm ci
 
       - name: Run typecheck
-        run: npm run typecheck
+        run: pnpm run typecheck
