@@ -8,6 +8,7 @@
     "preview": "astro preview",
     "astro": "astro",
     "tidy": "biome check --write .",
+    "tidy:check": "biome check",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {

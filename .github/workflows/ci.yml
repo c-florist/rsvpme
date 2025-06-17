@@ -1,0 +1,43 @@
+name: rsvpme CI
+on:
+  - pull_request
+concurrency:
+  group: ${{ github.head_ref || github.ref_name }}
+  cancel-in-progress: true
+
+jobs:
+  lint:
+    name: Lint
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+
+      - name: Use Node.js
+        uses: actions/setup-node@39370e3970a6d050c480ffad4ff0ed4d3fdee5af
+        with:
+          cache: 'npm'
+
+      - name: Install node modules
+        run: npm ci
+
+      - name: Run Biome check
+        run: npm run tidy:check
+
+  typecheck:
+    name: Typecheck
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+
+      - name: Use Node.js
+        uses: actions/setup-node@39370e3970a6d050c480ffad4ff0ed4d3fdee5af
+        with:
+          cache: 'npm'
+
+      - name: Install node modules
+        run: npm ci
+
+      - name: Run typecheck
+        run: npm run typecheck
