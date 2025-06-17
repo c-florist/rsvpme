@@ -13,16 +13,22 @@ jobs:
       - name: Checkout
         uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
 
+      - name: Setup pnpm
+        uses: pnpm/action-setup@a7487c7e89a18df4991f7f222e4898a00d66ddda
+        with:
+          version: 10.12
+
       - name: Use Node.js
         uses: actions/setup-node@39370e3970a6d050c480ffad4ff0ed4d3fdee5af
         with:
-          cache: 'npm'
+          node-version: 22.11
+          cache: 'pnpm'
 
       - name: Install node modules
-        run: npm ci
+        run: pnpm install
 
       - name: Run Biome check
-        run: npm run tidy:check
+        run: pnpm run tidy:check
 
   typecheck:
     name: Typecheck
@@ -31,13 +37,19 @@ jobs:
       - name: Checkout
         uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
 
+      - name: Setup pnpm
+        uses: pnpm/action-setup@a7487c7e89a18df4991f7f222e4898a00d66ddda
+        with:
+          version: 10.12
+
       - name: Use Node.js
         uses: actions/setup-node@39370e3970a6d050c480ffad4ff0ed4d3fdee5af
         with:
-          cache: 'npm'
+          node-version: 22.11
+          cache: 'pnpm'
 
       - name: Install node modules
-        run: npm ci
+        run: pnpm install
 
       - name: Run typecheck
-        run: npm run typecheck
+        run: pnpm run typecheck
