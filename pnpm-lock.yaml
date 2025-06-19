@@ -35,6 +35,9 @@ importers:
       typescript:
         specifier: ^5.8.3
         version: 5.8.3
+      zod:
+        specifier: ^3.25.67
+        version: 3.25.67
     devDependencies:
       '@astrojs/check':
         specifier: ^0.9.4
