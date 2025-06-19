@@ -7,32 +7,35 @@ _default:
 
 # Install application dependencies
 init:
-    npm install
+    pnpm install
 
 # Build the application
 build:
-    npm run build
+    pnpm run build
 
 # Run the astro dev server
 dev:
-    npm run dev
+    pnpm run dev
 
 # Run linting and fix issues
 tidy:
-    npm run tidy
+    pnpm run tidy
 
 # Run type checking
 typecheck:
-    npm run typecheck
+    pnpm run typecheck
+
+sync:
+    pnpm run astro sync
 
 # Create a new database migration
 migrations-generate name:
-    npm run db:generate {{name}}
+    pnpm run db:generate {{name}}
 
 # Run database migrations
 migrations-run:
-    npm run db:migrate
+    pnpm run db:migrate
 
 # Remove a migration [!NB]: This will not remove the record in public.__drizzle_migrations, only the SQL file in db/migrations
 migrations-drop:
-    npm run db:migrations:drop
+    pnpm run db:migrations:drop
