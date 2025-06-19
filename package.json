@@ -19,16 +19,11 @@
   },
   "dependencies": {
     "@astrojs/node": "^9.2.2",
-    "@astrojs/react": "^4.3.0",
     "@clerk/astro": "^2.9.1",
     "@libsql/client": "^0.15.9",
     "@tailwindcss/vite": "^4.1.10",
-    "@types/react": "^19.1.8",
-    "@types/react-dom": "^19.1.6",
     "astro": "^5.9.3",
     "drizzle-orm": "^0.44.2",
-    "react": "^19.1.0",
-    "react-dom": "^19.1.0",
     "tailwindcss": "^4.1.10",
     "typescript": "^5.8.3",
     "zod": "^3.25.67"

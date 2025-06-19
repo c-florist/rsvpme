@@ -2,7 +2,6 @@
 import { defineConfig, envField } from "astro/config";
 
 import node from "@astrojs/node";
-import react from "@astrojs/react";
 import clerk from "@clerk/astro";
 import tailwindcss from "@tailwindcss/vite";
 import tsconfigPaths from "vite-tsconfig-paths";
@@ -11,7 +10,7 @@ import tsconfigPaths from "vite-tsconfig-paths";
 export default defineConfig({
   output: "server",
 
-  integrations: [react(), clerk()],
+  integrations: [clerk()],
 
   env: {
     schema: {
