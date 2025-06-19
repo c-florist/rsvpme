@@ -1,7 +1,7 @@
 {
   "version": "6",
   "dialect": "sqlite",
-  "id": "db5ccaba-97e6-4084-be22-8bc408e30bb6",
+  "id": "c965ef86-14e2-4370-b75a-75d64a87dc28",
   "prevId": "1bdc502e-5dc9-423a-8fba-3d91e897a905",
   "tables": {
     "event": {
@@ -39,28 +39,28 @@
           "name": "description",
           "type": "text",
           "primaryKey": false,
-          "notNull": true,
+          "notNull": false,
           "autoincrement": false
         },
         "address": {
           "name": "address",
           "type": "text",
           "primaryKey": false,
-          "notNull": true,
+          "notNull": false,
           "autoincrement": false
         },
         "date": {
           "name": "date",
           "type": "text",
           "primaryKey": false,
-          "notNull": true,
+          "notNull": false,
           "autoincrement": false
         },
         "rsvp_deadline": {
           "name": "rsvp_deadline",
           "type": "text",
           "primaryKey": false,
-          "notNull": true,
+          "notNull": false,
           "autoincrement": false
         }
       },

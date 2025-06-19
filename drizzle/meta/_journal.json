@@ -12,14 +12,14 @@
     {
       "idx": 1,
       "version": "6",
-      "when": 1750317121042,
+      "when": 1750319021714,
       "tag": "0001_add_event_table",
       "breakpoints": true
     },
     {
       "idx": 2,
       "version": "6",
-      "when": 1750318876786,
+      "when": 1750319050960,
       "tag": "0002_add_invitee_table",
       "breakpoints": true
     }

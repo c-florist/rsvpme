@@ -8,10 +8,10 @@ export const event = sqliteTable("event", {
   userId: int("user_id").notNull().references(() => user.id, { onDelete: "cascade" }),
   uuid: text("uuid").notNull(),
   title: text("title").notNull(),
-  description: text("description").notNull(),
-  address: text("address").notNull(),
-  date: text("date").notNull(),
-  rsvpDeadline: text("rsvp_deadline").notNull(),
+  description: text("description"),
+  address: text("address"),
+  date: text("date"),
+  rsvpDeadline: text("rsvp_deadline"),
 });
 
 export const eventRelations = relations(event, ({ one, many }) => ({
