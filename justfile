@@ -8,7 +8,7 @@ _default:
 # Install application dependencies
 init:
     pnpm install
-    pnpm run astro sync
+    pnpm run sync
 
 # Build the application
 build:
