@@ -22,6 +22,6 @@ export default defineConfig({
     },
   },
   vite: {
-    plugins: [tsconfigPaths()]
+    plugins: [tsconfigPaths()],
   },
 });
