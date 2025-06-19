@@ -1,10 +1,10 @@
 // @ts-check
 import { defineConfig, envField } from "astro/config";
 
-import tsconfigPaths from "vite-tsconfig-paths";
-import react from "@astrojs/react";
 import node from "@astrojs/node";
+import react from "@astrojs/react";
 import clerk from "@clerk/astro";
+import tsconfigPaths from "vite-tsconfig-paths";
 
 // https://astro.build/config
 export default defineConfig({
