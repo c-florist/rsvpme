@@ -1,0 +1,18 @@
+docs:
+  - changed-files:
+      - any-glob-to-any-file: "**/*.md"
+
+db:
+  - changed-files:
+      - any-glob-to-any-file: "src/db/**"
+
+api:
+  - changed-files:
+      - any-glob-to-any-file: "src/api/**"
+
+frontend:
+  - changed-files:
+      - any-glob-to-any-file:
+        - "src/components/**"
+        - "src/layouts/**"
+        - "src/pages/**"
