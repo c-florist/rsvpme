@@ -9,7 +9,11 @@
     "astro": "astro",
     "tidy": "biome check --write .",
     "tidy:check": "biome check",
-    "typecheck": "astro check"
+    "typecheck": "astro check",
+    "db:generate": "drizzle-kit generate --name",
+    "db:migrate": "drizzle-kit migrate",
+    "db:migrations:run": "drizzle-kit migrate",
+    "db:migrations:drop": "drizzle-kit drop"
   },
   "dependencies": {
     "@astrojs/react": "^4.3.0",
