@@ -19,6 +19,16 @@ export default defineConfig({
         access: "secret",
         optional: false,
       }),
+      CLERK_PUBLIC_KEY: envField.string({
+        context: "client",
+        access: "public",
+        optional: false,
+      }),
+      CLERK_SECRET_KEY: envField.string({
+        context: "server",
+        access: "secret",
+        optional: false,
+      }),
     },
   },
   vite: {
