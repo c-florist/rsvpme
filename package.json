@@ -13,7 +13,8 @@
     "db:generate": "drizzle-kit generate --name",
     "db:migrate": "drizzle-kit migrate",
     "db:migrations:run": "drizzle-kit migrate",
-    "db:migrations:drop": "drizzle-kit drop"
+    "db:migrations:drop": "drizzle-kit drop",
+    "db:studio": "drizzle-kit studio"
   },
   "dependencies": {
     "@astrojs/react": "^4.3.0",

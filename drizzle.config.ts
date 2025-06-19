@@ -1,11 +1,10 @@
 import { defineConfig } from "drizzle-kit";
-import { DATABASE_URL, DATABASE_AUTH_TOKEN } from "astro:env/server";
 
 export default defineConfig({
   schema: "./src/db/schema/*",
   dialect: "turso",
   dbCredentials: {
-    url: DATABASE_URL,
-    authToken: DATABASE_AUTH_TOKEN,
+    url: process.env.DATABASE_URL || "",
+    authToken: process.env.DATABASE_AUTH_TOKEN || "",
   }
 });

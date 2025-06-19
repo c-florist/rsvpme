@@ -26,11 +26,11 @@ typecheck:
     npm run typecheck
 
 # Create a new database migration
-generate-migration name:
+migrations-generate name:
     npm run db:generate {{name}}
 
 # Run database migrations
-migrate:
+migrations-run:
     npm run db:migrate
 
 # Remove a migration [!NB]: This will not remove the record in public.__drizzle_migrations, only the SQL file in db/migrations
