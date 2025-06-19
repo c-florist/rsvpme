@@ -1,0 +1,14 @@
+repos:
+  - repo: local
+    hooks:
+      - id: tidy
+        language: system
+        name: 'npm run tidy'
+        entry: npm run tidy
+        files: ^src/
+
+      - id: typecheck
+        language: system
+        name: 'npm run typecheck'
+        entry: npm run typecheck
+        files: ^src/
