@@ -1,0 +1,34 @@
+---
+import type { HTMLAttributes } from "astro/types";
+import { cx } from "class-variance-authority";
+import {
+  type InteractiveProps,
+  type SizeProps,
+  interactiveVariants,
+  sizeVariants,
+} from "./variants";
+
+interface Props
+  extends Omit<HTMLAttributes<"input">, "disabled" | "size">,
+    SizeProps,
+    InteractiveProps {}
+
+const {
+  class: className,
+  size,
+  intent,
+  variant = "outline",
+  children,
+  ...rest
+} = Astro.props as Props;
+---
+<input 
+    class={cx(
+        sizeVariants({ size }),
+        interactiveVariants({ intent, variant }),
+        className,
+    )}
+    {...rest}
+>
+  <slot />
+</input>

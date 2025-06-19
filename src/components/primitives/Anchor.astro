@@ -1,0 +1,33 @@
+---
+import type { HTMLAttributes } from "astro/types";
+import { cx } from "class-variance-authority";
+import {
+  type InteractiveProps,
+  type SizeProps,
+  interactiveVariants,
+  sizeVariants,
+} from "./variants";
+
+interface Props extends HTMLAttributes<"a">, SizeProps, InteractiveProps {}
+
+const {
+  class: className,
+  size,
+  intent,
+  variant,
+  children,
+  ...rest
+} = Astro.props as Props;
+---
+<a 
+    class={cx(
+        "inline-flex items-center",
+        sizeVariants({ size }),
+        interactiveVariants({ intent, variant }),
+        className,
+    )}
+    {...rest}
+>
+  <slot />
+</a>
+

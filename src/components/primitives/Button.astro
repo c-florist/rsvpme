@@ -1,0 +1,32 @@
+---
+import type { HTMLAttributes } from "astro/types";
+import { cx } from "class-variance-authority";
+import {
+  type InteractiveProps,
+  type SizeProps,
+  interactiveVariants,
+  sizeVariants,
+} from "./variants";
+
+interface Props extends HTMLAttributes<"button">, SizeProps, InteractiveProps {}
+
+const {
+  class: className,
+  size,
+  intent,
+  variant,
+  children,
+  ...rest
+} = Astro.props as Props;
+---
+<button 
+    class={cx(
+        "cursor-pointer disabled:cursor-not-allowed inline-flex items-center",
+        sizeVariants({ size }),
+        interactiveVariants({ intent, variant }),
+        className,
+    )}
+    {...rest}
+>
+  <slot />
+</button>
