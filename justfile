@@ -27,7 +27,7 @@ typecheck:
     pnpm run typecheck
 
 sync:
-    pnpm run astro sync
+    pnpm run sync
 
 # Create a new database migration
 migrations-generate name:

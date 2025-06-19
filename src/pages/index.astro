@@ -1,7 +1,12 @@
 ---
 import SiteLayout from "~/layouts/SiteLayout.astro";
+
+const { userId } = Astro.locals.auth();
+if (!userId) {
+  return Astro.redirect("/login");
+}
 ---
 
-<SiteLayout title="Clerk + Astro">
-  <p>Sign in to try Clerk out!</p>
+<SiteLayout title="Home">
+  <p>Welcome to rsvpme!</p>
 </SiteLayout>
