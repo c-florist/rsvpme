@@ -23,6 +23,7 @@
     "@libsql/client": "^0.15.9",
     "@tailwindcss/vite": "^4.1.10",
     "astro": "^5.9.3",
+    "class-variance-authority": "^0.7.1",
     "drizzle-orm": "^0.44.2",
     "tailwindcss": "^4.1.10",
     "typescript": "^5.8.3",
