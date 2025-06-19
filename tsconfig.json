@@ -3,21 +3,21 @@
   "include": [".astro/types.d.ts", "**/*"],
   "exclude": ["dist"],
   "compilerOptions": {
-      "target": "ESNext",
-      "module": "ESNext",
-      "isolatedModules": true,
-      "esModuleInterop": true,
-      "jsx": "react-jsx",
-      "moduleResolution": "Bundler",
-      "resolveJsonModule": true,
-      "verbatimModuleSyntax": true,
-      "strict": true,
-      "allowJs": true,
-      "skipLibCheck": true,
-      "forceConsistentCasingInFileNames": true,
-      "noEmit": true,
-      "paths": {
-        "~/*": ["./src/*"]
-      }
+    "target": "ESNext",
+    "module": "ESNext",
+    "isolatedModules": true,
+    "esModuleInterop": true,
+    "jsx": "react-jsx",
+    "moduleResolution": "Bundler",
+    "resolveJsonModule": true,
+    "verbatimModuleSyntax": true,
+    "strict": true,
+    "allowJs": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "noEmit": true,
+    "paths": {
+      "~/*": ["./src/*"]
     }
+  }
 }
