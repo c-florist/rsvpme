@@ -1,6 +1,8 @@
 ---
 import SiteLayout from "~/layouts/SiteLayout.astro";
 
+import Anchor from "~/components/primitives/Anchor.astro";
+
 const { userId } = Astro.locals.auth();
 if (!userId) {
   return Astro.redirect("/login");
@@ -8,5 +10,6 @@ if (!userId) {
 ---
 
 <SiteLayout title="Home">
-  <p>Welcome to rsvpme!</p>
+    <p>Welcome to rsvpme!</p>
+    <p>Please visit my <Anchor href="/library">little component library</Anchor></p>
 </SiteLayout>

@@ -1,0 +1,70 @@
+---
+import { cx } from "class-variance-authority";
+import Anchor from "~/components/primitives/Anchor.astro";
+import Button from "~/components/primitives/Button.astro";
+import Input from "~/components/primitives/Input.astro";
+import {
+  type InteractiveProps,
+  type SizeProps,
+  sizeVariants,
+} from "~/components/primitives/variants";
+
+import SiteLayout from "~/layouts/SiteLayout.astro";
+
+const sizes = ["xs", "sm", "md", "lg"] as SizeProps["size"][];
+const intents = [
+  "primary",
+  "secondary",
+  "danger",
+  "warning",
+  "success",
+] as InteractiveProps["intent"][];
+---
+
+<SiteLayout title="Library" clas>
+  <section class="container mx-auto my-8 max-w-[800px]">
+    <h2 class="text-xl font-bold mb-2">Intro</h2>
+    <p class="my-1">
+        It's not so much a "library" as it is some tailwind styles built with class-variance-authority (and ideally it can stay that way).  
+        The idea being that these variants can be re-used across all the primitive components to create a predictable and consistent design system.
+    </p>
+    <div class="flex justify-center flex-col items-center gap-4">
+        {sizes.map((size) => <pre class={cx("bg-blue-200 flex items-center justify-center", sizeVariants({ size }))}>sizeVariants({'{'}size: "{size}"{'}'})</pre>)}
+    </div>
+    <p class="my-2">
+            And then the components just provide typed wrapper to pass into the variants/the underlying HTML element.  A litle overkill for now, a bit ugo, but spent a lot of today trying to disable and sidestep the styles/elements built into our component library at work..
+    </p>
+  </section>
+
+  <section class="container mx-auto my-8 max-w-[800px]">
+    <h2 class="text-xl font-bold mb-2">All Variants</h2>
+    <p class="my-2">
+        These are all the variants combinations right now.  They can be re-used across all the <code>~/components/primitives</code> components.
+        There are some weird combinations (I've never seen a filled input like this), but we can remove invalid combinations in the types of the components themselves.
+    </p>
+    {[Button, Input, Anchor].map((Component) => (
+      <div class="flex flex-col gap-4">
+        <h3 class="text-lg font-bold my-2">{Component.name}</h3>
+        <div class="flex flex-wrap gap-4">
+            {intents.map((intent) => (<Component size="xs" intent={intent} variant="solid"><pre>intent={intent}</pre></Component>))}
+        </div>
+        <div class="flex flex-wrap gap-4">
+            {intents.map((intent) => (<Component size="xs" intent={intent} disabled><pre>intent={intent} disabled</pre></Component>))}
+        </div>
+        <div class="flex flex-wrap gap-4">
+            {intents.map((intent) => (<Component size="xs" intent={intent} variant="outline"><pre>intent={intent} variant=outline</pre></Component>))}
+        </div>
+        <div class="flex flex-wrap gap-4">
+            {intents.map((intent) => (<Component size="xs" intent={intent} variant="outline" disabled><pre>intent={intent} variant=outline disabled</pre></Component>))}
+        </div>
+        <div class="flex flex-wrap gap-4">
+            {intents.map((intent) => (<Component size="xs" intent={intent} variant="text"><pre>intent={intent} variant=text</pre></Component>))}
+        </div>
+        <div class="flex flex-wrap gap-4">
+            {intents.map((intent) => (<Component size="xs" intent={intent} variant="text" disabled><pre>intent={intent} variant=text disabled</pre></Component>))}
+        </div>
+      </div>
+
+    ))}
+  </section>
+</SiteLayout>
