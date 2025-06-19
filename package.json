@@ -3,10 +3,11 @@
   "type": "module",
   "version": "0.0.1",
   "scripts": {
+    "sync": "astro sync",
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro",
+    "start": "node ./dist/server/entry.mjs",
     "tidy": "biome check --write .",
     "tidy:check": "biome check",
     "typecheck": "astro check",
@@ -17,14 +18,13 @@
     "db:studio": "drizzle-kit studio"
   },
   "dependencies": {
-    "@astrojs/react": "^4.3.0",
+    "@astrojs/node": "^9.2.2",
+    "@clerk/astro": "^2.9.1",
     "@libsql/client": "^0.15.9",
-    "@types/react": "^19.1.8",
-    "@types/react-dom": "^19.1.6",
+    "@tailwindcss/vite": "^4.1.10",
     "astro": "^5.9.3",
     "drizzle-orm": "^0.44.2",
-    "react": "^19.1.0",
-    "react-dom": "^19.1.0",
+    "tailwindcss": "^4.1.10",
     "typescript": "^5.8.3",
     "zod": "^3.25.67"
   },

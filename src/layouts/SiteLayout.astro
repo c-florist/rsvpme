@@ -1,0 +1,27 @@
+---
+import { SignedIn, UserButton } from "@clerk/astro/components";
+import "~/styles/global.css";
+
+const { title } = Astro.props;
+const pageTitle = `${title} | rsvpme`;
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+  </head>
+  <body>
+    <header>
+      <title>{pageTitle}</title>
+    </header>
+    <article>
+      <slot />
+    </article>
+    <SignedIn>
+      <UserButton />
+    </SignedIn>
+  </body>
+</html>

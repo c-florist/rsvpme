@@ -1,12 +1,17 @@
 // @ts-check
 import { defineConfig, envField } from "astro/config";
 
-import react from "@astrojs/react";
+import node from "@astrojs/node";
+import clerk from "@clerk/astro";
+import tailwindcss from "@tailwindcss/vite";
 import tsconfigPaths from "vite-tsconfig-paths";
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [react()],
+  output: "server",
+
+  integrations: [clerk()],
+
   env: {
     schema: {
       DATABASE_URL: envField.string({
@@ -19,9 +24,24 @@ export default defineConfig({
         access: "secret",
         optional: false,
       }),
+      PUBLIC_CLERK_PUBLISHABLE_KEY: envField.string({
+        context: "client",
+        access: "public",
+        optional: false,
+      }),
+      CLERK_SECRET_KEY: envField.string({
+        context: "server",
+        access: "secret",
+        optional: false,
+      }),
     },
   },
+
   vite: {
-    plugins: [tsconfigPaths()],
+    plugins: [tailwindcss(), tsconfigPaths()],
   },
+
+  adapter: node({
+    mode: "standalone",
+  }),
 });

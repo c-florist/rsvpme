@@ -8,6 +8,7 @@ _default:
 # Install application dependencies
 init:
     pnpm install
+    pnpm run sync
 
 # Build the application
 build:
@@ -26,7 +27,7 @@ typecheck:
     pnpm run typecheck
 
 sync:
-    pnpm run astro sync
+    pnpm run sync
 
 # Create a new database migration
 migrations-generate name:
