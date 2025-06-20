@@ -1,11 +1,10 @@
 ---
 import SiteLayout from "~/layouts/SiteLayout.astro";
 
-const redirectToSignIn = Astro.locals.auth();
 const user = await Astro.locals.currentUser();
 
 if (!user) {
-  return redirectToSignIn();
+  return Astro.redirect("/sign-in");
 }
 ---
 
