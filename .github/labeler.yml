@@ -8,7 +8,11 @@ db:
 
 api:
   - changed-files:
-      - any-glob-to-any-file: "src/api/**"
+      - any-glob-to-any-file: "src/pages/api/**"
+
+modules:
+  - changed-files:
+      - any-glob-to-any-file: "src/modules/**"
 
 frontend:
   - changed-files:
@@ -16,3 +20,4 @@ frontend:
         - "src/components/**"
         - "src/layouts/**"
         - "src/pages/**"
+      - all-globs-to-all-files: '!src/pages/api/**'
