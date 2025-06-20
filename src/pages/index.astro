@@ -1,7 +1,14 @@
 ---
 import SiteLayout from "~/layouts/SiteLayout.astro";
+
+const redirectToSignIn = Astro.locals.auth();
+const user = await Astro.locals.currentUser();
+
+if (!user) {
+  return redirectToSignIn();
+}
 ---
 
 <SiteLayout title="Home">
-  <p>Welcome to rsvpme!</p>
+  <p>Welcome, {user.firstName}</p>
 </SiteLayout>
