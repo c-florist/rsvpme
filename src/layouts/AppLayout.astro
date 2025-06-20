@@ -6,8 +6,8 @@ const { title } = Astro.props;
 ---
 
 <BaseLayout title={title}>
+  <slot />
   <SignedIn>
-    <slot />
     <UserButton />
   </SignedIn>
 </BaseLayout>
