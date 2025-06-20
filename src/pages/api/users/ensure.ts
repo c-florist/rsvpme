@@ -8,7 +8,10 @@ export const GET: APIRoute = async ({ locals, redirect }) => {
     return new Response("Unauthorized", { status: 401 });
   }
 
-  await UserService.verifyExists(clerkId);
+  const { user, created } = await UserService.ensureExists(clerkId);
+  console.log(
+    `User ${created ? "created" : "exists"} with clerkId: ${user.id}`,
+  );
 
   return redirect("/");
 };
