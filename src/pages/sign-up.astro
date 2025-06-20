@@ -1,11 +1,6 @@
 ---
 import { SignUp as ClerkSignUp, SignedOut } from "@clerk/astro/components";
 import SiteLayout from "~/layouts/SiteLayout.astro";
-
-const { userId } = Astro.locals.auth();
-if (userId) {
-  return Astro.redirect("/");
-}
 ---
 
 <SiteLayout title="Sign up">

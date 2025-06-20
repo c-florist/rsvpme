@@ -2,12 +2,8 @@
 import SiteLayout from "~/layouts/SiteLayout.astro";
 
 const user = await Astro.locals.currentUser();
-
-if (!user) {
-  return Astro.redirect("/sign-in");
-}
 ---
 
 <SiteLayout title="Home">
-  <p>Welcome, {user.firstName}</p>
+  <p>Welcome, {user?.firstName}</p>
 </SiteLayout>
