@@ -1,0 +1,17 @@
+---
+import { SignUp as ClerkSignUp, SignedOut } from "@clerk/astro/components";
+import SiteLayout from "~/layouts/SiteLayout.astro";
+---
+
+<SiteLayout title="Sign up">
+  <SignedOut>
+    <div class="flex justify-center">
+      <div class="mt-36">
+        <ClerkSignUp
+          forceRedirectUrl="/welcome"
+          signInForceRedirectUrl="/welcome"
+        />
+      </div>
+    </div>
+  </SignedOut>
+</SiteLayout>
