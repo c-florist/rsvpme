@@ -1,9 +1,14 @@
 ---
 import { SignIn as ClerkSignIn, SignedOut } from "@clerk/astro/components";
-import SiteLayout from "~/layouts/SiteLayout.astro";
+import AppLayout from "~/layouts/AppLayout.astro";
+
+const { userId } = Astro.locals.auth();
+if (userId) {
+  return Astro.redirect("/");
+}
 ---
 
-<SiteLayout title="Sign in">
+<AppLayout title="Sign in">
   <SignedOut>
     <div class="flex justify-center">
       <div class="mt-36">
@@ -14,4 +19,4 @@ import SiteLayout from "~/layouts/SiteLayout.astro";
       </div>
     </div>
   </SignedOut>
-</SiteLayout>
+</AppLayout>

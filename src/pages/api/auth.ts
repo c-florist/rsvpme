@@ -1,7 +1,7 @@
 import type { APIRoute } from "astro";
 import UserService from "~/modules/user/service";
 
-export const GET: APIRoute = async ({ locals, redirect }) => {
+export const GET: APIRoute = async ({ locals }) => {
   const { userId: clerkId } = locals.auth();
   if (!clerkId) {
     console.error("User does not exist after sign in");
@@ -13,5 +13,5 @@ export const GET: APIRoute = async ({ locals, redirect }) => {
     `User ${created ? "created" : "exists"} with clerkId: ${user.clerkId}`,
   );
 
-  return redirect("/");
+  return new Response("OK", { status: 200 });
 };

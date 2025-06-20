@@ -1,8 +1,16 @@
 ---
-import SiteLayout from "~/layouts/SiteLayout.astro";
+import AppLayout from "~/layouts/AppLayout.astro";
+import { GET as authGet } from "~/pages/api/auth";
+
+const response = await authGet(Astro);
+if (response.status === 200) {
+  Astro.redirect("/");
+} else {
+  throw new Error("Failed to authenticate user");
+}
 ---
 
-<SiteLayout title="Welcome">
+<AppLayout title="Welcome">
   <div class="flex min-h-screen items-center justify-center">
     <div class="text-center">
       <div class="mb-8">
@@ -18,12 +26,4 @@ import SiteLayout from "~/layouts/SiteLayout.astro";
       </p>
     </div>
   </div>
-
-  <script>
-    import { navigate } from "astro:transitions/client";
-
-    setTimeout(() => {
-      navigate("/api/auth");
-    }, 1500);
-  </script>
-</SiteLayout>
+</AppLayout>

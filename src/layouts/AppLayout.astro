@@ -1,0 +1,13 @@
+---
+import { SignedIn, UserButton } from "@clerk/astro/components";
+import BaseLayout from "./BaseLayout.astro";
+
+const { title } = Astro.props;
+---
+
+<BaseLayout title={title}>
+  <SignedIn>
+    <slot />
+    <UserButton />
+  </SignedIn>
+</BaseLayout>

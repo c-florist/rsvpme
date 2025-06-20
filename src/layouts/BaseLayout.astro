@@ -1,5 +1,4 @@
 ---
-import { SignedIn, UserButton } from "@clerk/astro/components";
 import "~/styles/global.css";
 
 const { title } = Astro.props;
@@ -17,11 +16,8 @@ const pageTitle = `${title} | rsvpme`;
     <header>
       <title>{pageTitle}</title>
     </header>
-    <article>
+    <main>
       <slot />
-    </article>
-    <SignedIn>
-      <UserButton />
-    </SignedIn>
+    </main>
   </body>
 </html>

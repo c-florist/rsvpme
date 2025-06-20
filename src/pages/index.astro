@@ -1,9 +1,9 @@
 ---
-import SiteLayout from "~/layouts/SiteLayout.astro";
+import AppLayout from "~/layouts/AppLayout.astro";
 
 const user = await Astro.locals.currentUser();
 ---
 
-<SiteLayout title="Home">
+<AppLayout title="Home">
   <p>Welcome, {user?.firstName}</p>
-</SiteLayout>
+</AppLayout>
