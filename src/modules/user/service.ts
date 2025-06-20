@@ -16,21 +16,13 @@ class UserService {
   }
 
   async ensureExists(clerkId: User["clerkId"]) {
-    try {
-      const existingUser = await this.getByClerkId(clerkId);
-      if (existingUser) {
-        return { user: existingUser, created: false };
-      }
-
-      const newUser = await this.create({ clerkId });
-      return { user: newUser, created: true };
-    } catch (error) {
-      console.error(
-        `Error ensuring user exists with clerkId: ${clerkId}:`,
-        error,
-      );
-      throw error;
+    const existingUser = await this.getByClerkId(clerkId);
+    if (existingUser) {
+      return { user: existingUser, created: false };
     }
+
+    const newUser = await this.create({ clerkId });
+    return { user: newUser, created: true };
   }
 }
 
