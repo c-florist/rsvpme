@@ -20,6 +20,7 @@
   "dependencies": {
     "@astrojs/node": "^9.2.2",
     "@clerk/astro": "^2.9.1",
+    "@conform-to/zod": "^1.7.2",
     "@libsql/client": "^0.15.9",
     "@tailwindcss/vite": "^4.1.10",
     "astro": "^5.9.3",
