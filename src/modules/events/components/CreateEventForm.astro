@@ -42,38 +42,37 @@ const schema = z.object({
     ),
 });
 const form = parseFormData(schema, formData);
-
 ---
 <form id={formId} method="post" class:list={["space-y-4 flex flex-col gap-2", className]} {...props}>
-    <input type="hidden" name="formId" value={formId} />
-    <InputField
-        name="title"
-        label="Event Title"
-        type="text"
-        required
-        value={form.status !== 'no_form' ? form.payload?.title as string : undefined}
-        error={form.status === 'error' ? form.error?.title : undefined}
-    />
-    <TextareaField
-        name="description"
-        label="Event Description"
-        value={form.status !== 'no_form' ? form.payload?.description as string : undefined}
-        error={form.status === 'error' ? form.error?.description : undefined}
-    />
-    <InputField
-        name="date"
-        label="Event Date"
-        type="date"
-        required
-        value={form.status !== 'no_form' ? form.payload?.date as string : undefined}
-        error={form.status === 'error' ? form.error?.date : undefined}
-    />
-    <InputField
-        name="time"
-        label="Event Time"
-        type="time"
-        value={form.status !== 'no_form' ? form.payload?.time as string : undefined}
-        error={form.status === 'error' ? form.error?.time : undefined}
-    />
-    <button type="submit" class="btn btn-primary">Create Event</button>
+  <input type="hidden" name="formId" value={formId} />
+  <InputField
+    name="title"
+    label="Event Title"
+    type="text"
+    required
+    value={form.status !== 'no_form' ? form.payload?.title as string : undefined}
+    error={form.status === 'error' ? form.error?.title : undefined}
+  />
+  <TextareaField
+    name="description"
+    label="Event Description"
+    value={form.status !== 'no_form' ? form.payload?.description as string : undefined}
+    error={form.status === 'error' ? form.error?.description : undefined}
+  />
+  <InputField
+    name="date"
+    label="Event Date"
+    type="date"
+    required
+    value={form.status !== 'no_form' ? form.payload?.date as string : undefined}
+    error={form.status === 'error' ? form.error?.date : undefined}
+  />
+  <InputField
+    name="time"
+    label="Event Time"
+    type="time"
+    value={form.status !== 'no_form' ? form.payload?.time as string : undefined}
+    error={form.status === 'error' ? form.error?.time : undefined}
+  />
+  <button type="submit" class="btn btn-primary">Create Event</button>
 </form>

@@ -35,7 +35,7 @@ export const customZodErrorMap: z.ZodErrorMap = (issue, ctx) => {
 
 export const parseFormData = <Schema extends z.AnyZodObject>(
   schema: Schema,
-  formData?: FormData
+  formData?: FormData,
 ) => {
   if (!formData) {
     return { status: "no_form" } as const;
