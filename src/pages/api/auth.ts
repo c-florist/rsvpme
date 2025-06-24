@@ -1,5 +1,5 @@
 import type { APIRoute } from "astro";
-import UserService from "~/modules/user/service";
+import UserService from "~/services/user/service";
 
 export const GET: APIRoute = async ({ locals, redirect }) => {
   const { userId: clerkId } = locals.auth();
