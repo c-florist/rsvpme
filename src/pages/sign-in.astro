@@ -1,6 +1,6 @@
 ---
 import { SignIn as ClerkSignIn, SignedOut } from "@clerk/astro/components";
-import AppLayout from "~/layouts/AppLayout.astro";
+import AppLayout from "~/client/layouts/AppLayout.astro";
 
 const { userId } = Astro.locals.auth();
 if (userId) {
