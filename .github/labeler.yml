@@ -4,20 +4,21 @@ docs:
 
 db:
   - changed-files:
-      - any-glob-to-any-file: "src/db/**"
+      - any-glob-to-any-file: "src/server/db/**"
 
 api:
   - changed-files:
       - any-glob-to-any-file: "src/pages/api/**"
 
-modules:
+pages:
   - changed-files:
-      - any-glob-to-any-file: "src/modules/**"
-
-frontend:
-  - changed-files:
-      - any-glob-to-any-file:
-        - "src/components/**"
-        - "src/layouts/**"
-        - "src/pages/**"
+      - any-glob-to-any-file: "src/pages/**"
       - all-globs-to-all-files: '!src/pages/api/**'
+
+server:
+  - changed-files:
+      - any-glob-to-any-file: "src/server/**"
+
+client:
+  - changed-files:
+      - any-glob-to-any-file: "src/client/**"

@@ -1,6 +1,6 @@
 import { relations } from "drizzle-orm";
 import { int, sqliteTable, text } from "drizzle-orm/sqlite-core";
-import type { InviteeResponse } from "~/services/invitee/schema";
+import type { InviteeResponse } from "~/server/services/invitee/schema";
 import { event } from "./event";
 
 export const invitee = sqliteTable("invitee", {

@@ -1,5 +1,5 @@
-import { db } from "~/db";
-import { user as userTable } from "~/db/schema";
+import { db } from "~/server/db";
+import { user as userTable } from "~/server/db/schema";
 import type { User } from "./schema";
 
 class UserService {
