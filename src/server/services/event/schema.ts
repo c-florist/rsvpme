@@ -13,3 +13,9 @@ const inviteeResponsesSchema = z.enum([
 ]);
 
 export type InviteeResponse = z.infer<typeof inviteeResponsesSchema>;
+
+export type Invitee = {
+  firstName: string;
+  lastName: string;
+  response: InviteeResponse;
+};
