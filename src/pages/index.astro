@@ -1,9 +1,7 @@
 ---
 import AppLayout from "~/client/layouts/AppLayout.astro";
-
-const user = await Astro.locals.currentUser();
 ---
 
 <AppLayout title="Home">
-  <p>Welcome, {user?.firstName}</p>
+  <p>Welcome, to rsvpme!</p>
 </AppLayout>

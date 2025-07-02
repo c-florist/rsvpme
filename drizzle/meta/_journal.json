@@ -5,22 +5,8 @@
     {
       "idx": 0,
       "version": "6",
-      "when": 1750316683511,
-      "tag": "0000_add_user_table",
-      "breakpoints": true
-    },
-    {
-      "idx": 1,
-      "version": "6",
-      "when": 1750319021714,
-      "tag": "0001_add_event_table",
-      "breakpoints": true
-    },
-    {
-      "idx": 2,
-      "version": "6",
-      "when": 1750319050960,
-      "tag": "0002_add_invitee_table",
+      "when": 1751451681044,
+      "tag": "0000_add_event_table",
       "breakpoints": true
     }
   ]
