@@ -21,7 +21,7 @@ const inviteeSchema = z.object({
 export type Invitee = z.infer<typeof inviteeSchema>;
 
 export const eventSchema = z.object({
-  uuid: z.string().uuid(),
+  ulid: z.string().ulid(),
   password: z.string(),
   title: z.string(),
   description: z.string().nullish(),
@@ -31,3 +31,13 @@ export const eventSchema = z.object({
   invitees: z.array(inviteeSchema).nullish(),
 });
 export type Event = z.infer<typeof eventSchema>;
+
+export const createEventSchema = eventSchema.pick({
+  title: true,
+  description: true,
+  address: true,
+  date: true,
+  rsvpByDate: true,
+  invitees: true,
+});
+export type CreateEvent = z.infer<typeof createEventSchema>;
