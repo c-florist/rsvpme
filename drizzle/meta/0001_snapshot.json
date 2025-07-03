@@ -1,8 +1,8 @@
 {
   "version": "6",
   "dialect": "sqlite",
-  "id": "84e766d3-efe8-4571-9673-6b3edae4f985",
-  "prevId": "00000000-0000-0000-0000-000000000000",
+  "id": "e9b262c4-53cb-4cfb-9c1a-b83de6656ca4",
+  "prevId": "84e766d3-efe8-4571-9673-6b3edae4f985",
   "tables": {
     "event": {
       "name": "event",
@@ -87,7 +87,15 @@
           "default": "(CURRENT_TIMESTAMP)"
         }
       },
-      "indexes": {},
+      "indexes": {
+        "event_ulid_unique": {
+          "name": "event_ulid_unique",
+          "columns": [
+            "ulid"
+          ],
+          "isUnique": true
+        }
+      },
       "foreignKeys": {},
       "compositePrimaryKeys": {},
       "uniqueConstraints": {},

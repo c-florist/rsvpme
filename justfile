@@ -18,6 +18,14 @@ build:
 dev:
     pnpm run dev
 
+# Run unit tests
+test:
+    pnpm run test:unit
+
+# Run unit tests in watch mode
+tdd:
+    pnpm run test:unit:watch
+
 # Run linting and fix issues
 tidy:
     pnpm run tidy
@@ -26,6 +34,7 @@ tidy:
 typecheck:
     pnpm run typecheck
 
+# Generate types for Astro modules
 sync:
     pnpm run sync
 

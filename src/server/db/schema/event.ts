@@ -4,7 +4,7 @@ import type { Invitee } from "~/server/services/event/schema";
 
 export const event = sqliteTable("event", {
   id: int("id").primaryKey({ autoIncrement: true }),
-  uuid: text("uuid").notNull(),
+  ulid: text("ulid").notNull().unique(),
   password: text("password").notNull(),
   title: text("title").notNull(),
   description: text("description"),

@@ -1,0 +1,1 @@
+CREATE UNIQUE INDEX `event_ulid_unique` ON `event` (`ulid`);
