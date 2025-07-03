@@ -1,7 +1,7 @@
 {
   "version": "6",
   "dialect": "sqlite",
-  "id": "006280ea-8b80-45cc-b211-2f7fe16ba7d5",
+  "id": "84e766d3-efe8-4571-9673-6b3edae4f985",
   "prevId": "00000000-0000-0000-0000-000000000000",
   "tables": {
     "event": {
@@ -14,8 +14,8 @@
           "notNull": true,
           "autoincrement": true
         },
-        "uuid": {
-          "name": "uuid",
+        "ulid": {
+          "name": "ulid",
           "type": "text",
           "primaryKey": false,
           "notNull": true,
