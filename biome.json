@@ -7,7 +7,13 @@
   },
   "files": {
     "ignoreUnknown": false,
-    "ignore": ["node_modules", "dist", ".astro", "drizzle"]
+    "ignore": [
+      "node_modules",
+      "dist",
+      ".astro",
+      "drizzle",
+      "./src/client/styles/global.css"
+    ]
   },
   "formatter": {
     "indentWidth": 2,
