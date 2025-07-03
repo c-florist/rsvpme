@@ -9,15 +9,20 @@ const pageTitle = `${title} | rsvpme`;
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" href="/logo-16.png" sizes="16x16" type="image/png">
+    <link rel="icon" href="/logo-32.png" sizes="32x32" type="image/png">
+    <link rel="icon" href="/logo-96.png" sizes="96x96" type="image/png">
     <meta name="generator" content={Astro.generator} />
   </head>
-  <body class="bg-primary min-h-screen">
+  <body class="flex flex-col min-h-screen bg-primary">
     <header>
       <title>{pageTitle}</title>
     </header>
-    <main>
+    <main class="flex-1">
       <slot />
     </main>
   </body>
+  <footer>
+    <p class="flex justify-end p-2 text-font-color/50">Icons by&nbsp;<a target="_blank" href="https://icons8.com">Icons8</a></p>
+  </footer>
 </html>
