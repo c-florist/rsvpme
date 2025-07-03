@@ -6,7 +6,7 @@ import * as schema from "~/server/db/schema";
 import type { CreateEvent } from "./schema";
 
 class EventService {
-  private generatePassword() {
+  generatePassword() {
     const chars =
       "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
     const bytes = randomBytes(10);

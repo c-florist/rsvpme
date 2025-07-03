@@ -8,6 +8,8 @@
     "build": "astro build",
     "preview": "astro preview",
     "start": "node ./dist/server/entry.mjs",
+    "test": "vitest run",
+    "test:watch": "vitest watch",
     "tidy": "biome check --write .",
     "tidy:check": "biome check",
     "typecheck": "astro check",
@@ -38,6 +40,7 @@
     "@types/bcrypt": "^5.0.2",
     "daisyui": "^5.0.43",
     "drizzle-kit": "^0.31.1",
-    "vite-tsconfig-paths": "^5.1.4"
+    "vite-tsconfig-paths": "^5.1.4",
+    "vitest": "^3.2.4"
   }
 }
