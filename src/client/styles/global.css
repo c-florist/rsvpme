@@ -1,7 +1,7 @@
 @import "tailwindcss";
 @plugin "daisyui";
 @plugin "daisyui/theme" {
-  name: "sunset";
+  name: "rsvpme";
   default: true;
   prefersdark: false;
   color-scheme: "light";
