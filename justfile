@@ -20,7 +20,11 @@ dev:
 
 # Run unit tests
 test:
-    pnpm run test
+    pnpm run test:unit
+
+# Run unit tests in watch mode
+tdd:
+    pnpm run test:unit:watch
 
 # Run linting and fix issues
 tidy:
