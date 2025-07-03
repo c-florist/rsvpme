@@ -1,5 +1,6 @@
 import { randomBytes } from "node:crypto";
 import bcrypt from "bcrypt";
+import { eq } from "drizzle-orm";
 import { ulid } from "ulid";
 import { db } from "~/server/db";
 import * as schema from "~/server/db/schema";
@@ -32,6 +33,23 @@ class EventService {
       eventUlid,
       password,
     };
+  }
+
+  async get({ ulid, password }: { ulid: string; password: string }) {
+    const event = await db.query.event.findFirst({
+      where: eq(schema.event.ulid, ulid),
+    });
+
+    if (!event) {
+      throw new Error("Event not found");
+    }
+
+    const isPasswordValid = await bcrypt.compare(password, event.password);
+    if (!isPasswordValid) {
+      throw new Error("Invalid password");
+    }
+
+    return event;
   }
 }
 
