@@ -2,13 +2,13 @@ import type { ComponentProps, JSX } from "preact";
 import { useRef, useState } from "preact/hooks";
 import type { typeToFlattenedError } from "zod";
 
-import { FormInput, FormTextarea } from "~/components/Form";
-import {
-  createEventSchema,
-  type CreateEvent,
-} from "~/server/services/event/schema";
 import { actions } from "astro:actions";
 import clsx from "clsx";
+import { FormInput, FormTextarea } from "~/components/Form";
+import {
+  type CreateEvent,
+  createEventSchema,
+} from "~/server/services/event/schema";
 
 type FieldErrors = typeToFlattenedError<CreateEvent, string>["fieldErrors"];
 
