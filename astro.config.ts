@@ -5,6 +5,8 @@ import node from "@astrojs/node";
 import tailwindcss from "@tailwindcss/vite";
 import tsconfigPaths from "vite-tsconfig-paths";
 
+import preact from "@astrojs/preact";
+
 // https://astro.build/config
 export default defineConfig({
   env: {
@@ -29,4 +31,6 @@ export default defineConfig({
   adapter: node({
     mode: "standalone",
   }),
+
+  integrations: [preact({ devtools: true })],
 });
