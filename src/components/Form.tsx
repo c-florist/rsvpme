@@ -79,7 +79,7 @@ export function FormTextarea({
         className={clsx(
           "textarea",
           errors?.length && "textarea-error",
-          className
+          className,
         )}
         name={name}
         id={id}
