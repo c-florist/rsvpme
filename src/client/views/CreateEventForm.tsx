@@ -72,7 +72,7 @@ export default function CreateEventForm({
         />
 
         <FormInput
-          label="Rsvp by date"
+          label="RSVP date"
           id="create-event-rsvp-by-date"
           name="rsvpByDate"
           type="date"
@@ -89,7 +89,7 @@ export default function CreateEventForm({
       />
 
       <button type="submit" className="btn btn-primary">
-        Create Event
+        Create event
       </button>
     </form>
   );
