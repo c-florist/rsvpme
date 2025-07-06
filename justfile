@@ -7,8 +7,15 @@ _default:
 
 # Install application dependencies
 init:
+    @echo "📦 Installing dependencies..."
     pnpm install
+    @echo "🔄 Syncing Astro types..."
     pnpm run sync
+    @echo "🗄️  Setting up local database..."
+    pnpm run db:setup
+    @echo "🌱 Seeding database with sample data..."
+    pnpm run db:seed
+    @echo "✅ Setup complete! Run 'just dev' to start the development server."
 
 # Build the application
 build:
