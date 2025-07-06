@@ -24,6 +24,7 @@
       {
         "name": "@astrojs/ts-plugin"
       }
-    ]
+    ],
+    "jsxImportSource": "preact"
   }
 }
