@@ -17,7 +17,10 @@
     "db:migrate": "drizzle-kit migrate",
     "db:migrations:run": "drizzle-kit migrate",
     "db:migrations:drop": "drizzle-kit drop",
-    "db:studio": "drizzle-kit studio"
+    "db:studio": "drizzle-kit studio",
+    "db:setup": "cp local/local.db.template local/local.db",
+    "db:seed": "tsx src/server/db/seed.ts",
+    "db:reset": "rm -f local/local.db && pnpm db:setup && pnpm db:seed"
   },
   "dependencies": {
     "@astrojs/node": "^9.2.2",
@@ -43,6 +46,7 @@
     "@types/bcrypt": "^5.0.2",
     "daisyui": "^5.0.43",
     "drizzle-kit": "^0.31.1",
+    "tsx": "^4.20.3",
     "vite-tsconfig-paths": "^5.1.4",
     "vitest": "^3.2.4"
   }

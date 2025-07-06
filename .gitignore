@@ -22,3 +22,8 @@ pnpm-debug.log*
 
 # jetbrains setting folder
 .idea/
+
+# database files
+*.db
+!local/local.db.template
+local/local.db
