@@ -4,7 +4,7 @@ import type { typeToFlattenedError } from "zod";
 
 import { actions } from "astro:actions";
 import clsx from "clsx";
-import { FormInput, FormTextarea } from "~/components/Form";
+import { FormInput, FormTextarea } from "~/client/components/Form";
 import {
   type CreateEvent,
   createEventSchema,
