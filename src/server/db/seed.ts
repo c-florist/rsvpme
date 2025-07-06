@@ -16,7 +16,6 @@ const db = drizzle({
 async function seed() {
   console.log("🌱 Seeding database...");
 
-  // Sample invitees for events
   const sampleInvitees: Invitee[] = [
     { firstName: "John", lastName: "Doe", response: InviteeResponses.YES },
     { firstName: "Jane", lastName: "Smith", response: InviteeResponses.MAYBE },
@@ -32,7 +31,6 @@ async function seed() {
     { firstName: "Lisa", lastName: "Anderson", response: InviteeResponses.NO },
   ];
 
-  // Create sample events
   const events = [
     {
       ulid: ulid(),
@@ -107,11 +105,9 @@ async function seed() {
   ];
 
   try {
-    // Clear existing data
     await db.delete(schema.event);
     console.log("🗑️ Cleared existing events");
 
-    // Insert sample events
     for (const event of events) {
       await db.insert(schema.event).values(event);
       console.log(`✅ Created event: ${event.title}`);
