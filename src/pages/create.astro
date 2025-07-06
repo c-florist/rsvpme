@@ -1,22 +1,17 @@
 ---
-import { ArrowLeftIcon } from "~/client/components/icons";
 import AppLayout from "~/client/layouts/AppLayout.astro";
+import CreateEventForm from "~/client/views/CreateEventForm";
 ---
 
 <AppLayout title="Create Event">
   <div class="container mx-auto px-4 py-16">
-    <div class="max-w-md mx-auto text-center">
+    <div class="max-w-md mx-auto">
       <h1 class="text-4xl font-bold text-neutral mb-4">Create Event</h1>
-      <p class="text-base-content/70 mb-8">
-        This page is coming soon! Here you'll be able to create your events.
+      <p class="text-sm mb-4 text-base-content/60">
+        Create an event instantly and get a unique link to share with your guests.
+        Keep your edit link safe to manage your event later.
       </p>
-
-      <div class="space-y-4">
-        <a href="/" class="btn btn-outline">
-          <ArrowLeftIcon class="mr-2" />
-          Return home
-        </a>
-      </div>
+      <CreateEventForm client:load id="create-event-form" className="gap-6" />
     </div>
   </div>
 </AppLayout>
