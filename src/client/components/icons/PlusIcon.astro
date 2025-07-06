@@ -1,0 +1,14 @@
+---
+import Icon from "./Icon.astro";
+
+export interface Props {
+  size?: string;
+  class?: string;
+}
+
+const { size, class: className } = Astro.props;
+---
+
+<Icon size={size} class={className}>
+  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path>
+</Icon>

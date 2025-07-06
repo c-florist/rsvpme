@@ -1,4 +1,5 @@
 ---
+import { BrandIcon, CheckIcon, PlusIcon } from "~/client/components/icons";
 import AppLayout from "~/client/layouts/AppLayout.astro";
 ---
 
@@ -6,28 +7,25 @@ import AppLayout from "~/client/layouts/AppLayout.astro";
   <div class="hero min-h-screen bg-base-200">
     <div class="hero-content text-center">
       <div class="max-w-md">
-        <h1 class="text-5xl font-bold text-neutral mb-4">rsvpme</h1>
+        <div class="flex items-center justify-center gap-3 mb-4">
+          <BrandIcon size="w-12 h-12" class="text-neutral" />
+          <h1 class="text-5xl font-bold text-neutral">rsvpme</h1>
+        </div>
         <p class="text-lg text-base-content/80 mb-6">
           Create events and collect RSVPs with zero friction.
         </p>
         <div class="space-y-4">
           <div class="flex flex-col gap-2 text-base-content/70">
             <div class="flex items-center gap-2">
-              <svg class="w-5 h-5 text-success" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-              </svg>
+              <CheckIcon class="text-success" />
               <span>No passwords required</span>
             </div>
             <div class="flex items-center gap-2">
-              <svg class="w-5 h-5 text-success" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-              </svg>
+              <CheckIcon class="text-success" />
               <span>No account creation needed</span>
             </div>
             <div class="flex items-center gap-2">
-              <svg class="w-5 h-5 text-success" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-              </svg>
+              <CheckIcon class="text-success" />
               <span>Secure unique links for editing</span>
             </div>
           </div>
@@ -38,9 +36,7 @@ import AppLayout from "~/client/layouts/AppLayout.astro";
           </p>
           <a href="/create" class="btn btn-primary btn-lg mt-6">
             Create an event
-            <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path>
-            </svg>
+            <PlusIcon class="ml-2" />
           </a>
         </div>
       </div>

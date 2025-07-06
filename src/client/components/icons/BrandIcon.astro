@@ -1,0 +1,53 @@
+---
+export interface Props {
+  size?: string;
+  class?: string;
+}
+
+const { size = "w-8 h-8", class: className = "" } = Astro.props;
+---
+
+<svg
+  class={`${size} ${className}`}
+  viewBox="0 0 24 24"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <!-- Calendar/Event base -->
+  <rect
+    x="3"
+    y="4"
+    width="18"
+    height="15"
+    rx="2"
+    stroke="currentColor"
+    stroke-width="2"
+    fill="none"
+  />
+  
+  <!-- Calendar header -->
+  <path
+    d="M3 8h18"
+    stroke="currentColor"
+    stroke-width="2"
+    stroke-linecap="round"
+  />
+  
+  <!-- Calendar hangers -->
+  <path
+    d="M7 2v4m10-4v4"
+    stroke="currentColor"
+    stroke-width="2"
+    stroke-linecap="round"
+  />
+  
+  <!-- Checkmark (RSVP confirmation) -->
+  <path
+    d="M8.5 12.5l2 2 4.5-4.5"
+    stroke="currentColor"
+    stroke-width="2.5"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    fill="none"
+  />
+</svg>
