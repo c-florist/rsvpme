@@ -31,6 +31,9 @@ export default function CreateEventForm({
 
     if (parsedResult.success) {
       const { data, error } = await actions.createEvent(parsedResult.data);
+      console.log("Create event result:", { data, error });
+      // TODO: Display success message and redirect
+      // TODO: Handle unexpected errors.
     } else {
       setFieldErrors(parsedResult.error.formErrors.fieldErrors);
     }
