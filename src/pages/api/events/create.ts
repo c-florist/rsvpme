@@ -8,11 +8,11 @@ export const POST: APIRoute = async ({ request }) => {
 
   const validationResult = createEventSchema.safeParse(body);
   if (!validationResult.success) {
+    logger.error("Invalid input data", validationResult.error);
     return new Response(
       JSON.stringify({
         success: false,
         error: "Invalid input data",
-        details: validationResult.error.issues,
       }),
       {
         status: 400,
