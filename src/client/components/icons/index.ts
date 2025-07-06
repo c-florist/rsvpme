@@ -1,3 +1,4 @@
+export { default as BrandIcon } from "./BrandIcon.astro";
 export { default as CheckIcon } from "./CheckIcon.astro";
 export { default as PlusIcon } from "./PlusIcon.astro";
 export { default as HomeIcon } from "./HomeIcon.astro";

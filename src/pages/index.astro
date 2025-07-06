@@ -1,5 +1,5 @@
 ---
-import { CheckIcon, PlusIcon } from "~/client/components/icons";
+import { BrandIcon, CheckIcon, PlusIcon } from "~/client/components/icons";
 import AppLayout from "~/client/layouts/AppLayout.astro";
 ---
 
@@ -7,7 +7,10 @@ import AppLayout from "~/client/layouts/AppLayout.astro";
   <div class="hero min-h-screen bg-base-200">
     <div class="hero-content text-center">
       <div class="max-w-md">
-        <h1 class="text-5xl font-bold text-neutral mb-4">rsvpme</h1>
+        <div class="flex items-center justify-center gap-3 mb-4">
+          <BrandIcon size="w-12 h-12" class="text-neutral" />
+          <h1 class="text-5xl font-bold text-neutral">rsvpme</h1>
+        </div>
         <p class="text-lg text-base-content/80 mb-6">
           Create events and collect RSVPs with zero friction.
         </p>
