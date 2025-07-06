@@ -30,7 +30,7 @@ class EventService {
     });
 
     return {
-      eventUlid,
+      ulid: eventUlid,
       password,
     };
   }
