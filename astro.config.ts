@@ -32,5 +32,5 @@ export default defineConfig({
     mode: "standalone",
   }),
 
-  integrations: [preact({ compat: true, devtools: true })],
+  integrations: [preact({ devtools: true })],
 });
