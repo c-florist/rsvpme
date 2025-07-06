@@ -4,10 +4,17 @@ A simple app to gather RSVPs for an event
 
 ## TODO
 
+### General functionality
+
 - [ ] User can create an event
 - [ ] User can edit an event with a link and password
 - [ ] User can delete an event
 - [ ] User can share the event with invitees via a link
+
+### Event details
+- [ ] Users can share securely to other platforms? Maybe Instagram chats / Whatsapp chats etc?
+- [ ] Event address has a map lookup and link
+- [ ] Can add event to calendar via .ics or similar?
 
 ## UI
 
