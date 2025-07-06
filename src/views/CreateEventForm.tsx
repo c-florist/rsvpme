@@ -44,7 +44,7 @@ export default function CreateEventForm({
       {...props}
     >
       <FormInput
-        label="Event Name"
+        label="Event name"
         id="create-event-title"
         name="title"
         errors={fieldErrors?.title}
@@ -52,7 +52,7 @@ export default function CreateEventForm({
         className="w-full"
       />
       <FormTextarea
-        label="Event Description"
+        label="Event description"
         id="create-event-description"
         name="description"
         errors={fieldErrors?.description}
@@ -61,7 +61,7 @@ export default function CreateEventForm({
 
       <div className="flex flex-col md:flex-row gap-2 *:basis-full *:md:basis-1/2">
         <FormInput
-          label="Event Date"
+          label="Event date"
           id="create-event-date"
           name="date"
           type="date"
@@ -69,7 +69,7 @@ export default function CreateEventForm({
         />
 
         <FormInput
-          label="Rsvp by Date"
+          label="Rsvp by date"
           id="create-event-rsvp-by-date"
           name="rsvpByDate"
           type="date"
@@ -78,7 +78,7 @@ export default function CreateEventForm({
       </div>
 
       <FormInput
-        label="Event Address"
+        label="Event address"
         id="create-event-address"
         name="address"
         errors={fieldErrors?.address}
