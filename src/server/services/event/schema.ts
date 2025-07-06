@@ -23,8 +23,8 @@ export type Invitee = z.infer<typeof inviteeSchema>;
 export const eventSchema = z.object({
   ulid: z.string().ulid(),
   password: z.string(),
-  title: z.string(),
-  description: z.string().nullish(),
+  title: z.string().max(200).min(1),
+  description: z.string().max(5000).nullish(),
   address: z.string().nullish(),
   date: z.string().nullish(),
   rsvpByDate: z.string().nullish(),
