@@ -46,7 +46,7 @@ describe("EventService", () => {
     });
 
     it("should return plain text password for user", async () => {
-      const eventData = { title: "Test Event" };
+      const eventData = { title: "Test Event", invitees: [] };
 
       const result = await EventService.create(eventData);
 
