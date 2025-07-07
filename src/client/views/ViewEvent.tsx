@@ -13,24 +13,36 @@ export default function ViewEvent({ event, ...props }: ViewEventProps) {
         <p className="text-lg text-base-content/80 mb-6">{event.description}</p>
       )}
       <div className="space-y-4">
-        {event.date && (
-          <div className="flex items-center gap-2">
-            <span className="font-semibold">Date:</span>
+        <div className="flex items-center gap-2">
+          <span className="font-semibold">Date:</span>
+          {event.date ? (
             <span>{new Date(event.date).toLocaleDateString()}</span>
-          </div>
-        )}
-        {event.address && (
-          <div className="flex items-center gap-2">
-            <span className="font-semibold">Address:</span>
+          ) : (
+            <span className="text-base-content/60 flex items-center gap-2">
+              <span>Date not set</span>
+            </span>
+          )}
+        </div>
+        <div className="flex items-center gap-2">
+          <span className="font-semibold">Address:</span>
+          {event.address ? (
             <span>{event.address}</span>
-          </div>
-        )}
-        {event.rsvpByDate && (
-          <div className="flex items-center gap-2">
-            <span className="font-semibold">RSVP by:</span>
+          ) : (
+            <span className="text-base-content/60 flex items-center gap-2">
+              <span>Location not specified</span>
+            </span>
+          )}
+        </div>
+        <div className="flex items-center gap-2">
+          <span className="font-semibold">RSVP by:</span>
+          {event.rsvpByDate ? (
             <span>{new Date(event.rsvpByDate).toLocaleDateString()}</span>
-          </div>
-        )}
+          ) : (
+            <span className="text-base-content/60 flex items-center gap-2">
+              <span>No RSVP deadline set</span>
+            </span>
+          )}
+        </div>
       </div>
     </div>
   );
