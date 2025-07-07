@@ -1,5 +1,7 @@
 import clsx from "clsx";
 import type { ComponentProps, VNode } from "preact";
+import { useCallback } from "preact/hooks";
+import { useFocus } from "~/client/hooks/useFocus";
 
 export interface FormFieldProps {
   id: string;
@@ -38,6 +40,7 @@ export interface FormInputProps extends ComponentProps<"input"> {
   name: string;
   label: string;
   errors?: string[];
+  isFocused?: boolean;
 }
 export function FormInput({
   label,
@@ -45,11 +48,15 @@ export function FormInput({
   errors,
   name,
   className,
+  isFocused = false,
   ...props
 }: FormInputProps) {
+  const handleAutoFocus = useFocus(isFocused);
+
   return (
     <FormField id={id} name={name} label={label} errors={errors}>
       <input
+        ref={handleAutoFocus}
         className={clsx("input", errors?.length && "input-error", className)}
         name={name}
         id={id}
@@ -64,6 +71,7 @@ export interface FormTextareaProps extends ComponentProps<"textarea"> {
   name: string;
   label: string;
   errors?: string[];
+  isFocused?: boolean;
 }
 export function FormTextarea({
   label,
@@ -71,11 +79,14 @@ export function FormTextarea({
   errors,
   name,
   className,
+  isFocused = false,
   ...props
 }: FormTextareaProps) {
+  const handleAutoFocus = useFocus(isFocused);
   return (
     <FormField id={id} name={name} label={label} errors={errors}>
       <textarea
+        ref={handleAutoFocus}
         className={clsx(
           "textarea",
           errors?.length && "textarea-error",
