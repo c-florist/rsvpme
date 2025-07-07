@@ -4,7 +4,7 @@ import { eq } from "drizzle-orm";
 import { ulid } from "ulid";
 import { db } from "~/server/db";
 import * as schema from "~/server/db/schema";
-import type { CreateEvent } from "./schema";
+import { InviteeResponses, type CreateEvent } from "./schema";
 
 class EventService {
   generatePassword() {
@@ -22,11 +22,16 @@ class EventService {
     const eventUlid = ulid();
     const password = this.generatePassword();
     const hashedPassword = await bcrypt.hash(password, 12);
+    const invitees = event.invitees.map((invitee) => ({
+      ...invitee,
+      response: InviteeResponses.PENDING,
+    }));
 
     await db.insert(schema.event).values({
       ...event,
       ulid: eventUlid,
       password: hashedPassword,
+      invitees,
     });
 
     return {
