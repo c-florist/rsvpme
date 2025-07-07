@@ -1,8 +1,8 @@
+import clsx from "clsx";
+import type { ComponentProps } from "preact";
+import { forwardRef } from "preact/compat";
 import { FormInput } from "../components/Form";
 import { TrashIcon } from "../components/icons";
-import type { ComponentProps } from "preact";
-import clsx from "clsx";
-import { forwardRef } from "preact/compat";
 
 import { useCallback, useState } from "preact/hooks";
 import { ulid } from "ulid";

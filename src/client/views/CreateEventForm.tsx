@@ -3,14 +3,14 @@ import { useState } from "preact/hooks";
 import type { typeToFlattenedError } from "zod";
 
 import { actions } from "astro:actions";
+import { PlusIcon } from "~/client/components/icons";
+import { EditEventDetails } from "~/client/views/EditEventDetails";
+import { EditInvitees, useEditInvitees } from "~/client/views/EditInvitees";
 import {
-  eventDetailsSchema,
   type CreateEvent,
   type EventDetails,
+  eventDetailsSchema,
 } from "~/server/services/event/schema";
-import { PlusIcon } from "~/client/components/icons";
-import { EditInvitees, useEditInvitees } from "~/client/views/EditInvitees";
-import { EditEventDetails } from "~/client/views/EditEventDetails";
 
 type FieldErrors = typeToFlattenedError<CreateEvent, string>["fieldErrors"];
 

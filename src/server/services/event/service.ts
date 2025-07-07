@@ -4,7 +4,7 @@ import { eq } from "drizzle-orm";
 import { ulid } from "ulid";
 import { db } from "~/server/db";
 import * as schema from "~/server/db/schema";
-import { InviteeResponses, type CreateEvent } from "./schema";
+import { type CreateEvent, InviteeResponses } from "./schema";
 
 class EventService {
   generatePassword() {

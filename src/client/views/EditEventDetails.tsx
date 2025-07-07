@@ -1,8 +1,8 @@
-import type { EventDetails } from "~/server/services/event/schema";
-import { FormInput, FormTextarea } from "../components/Form";
+import clsx from "clsx";
 import type { ComponentProps } from "preact";
 import type { typeToFlattenedError } from "zod";
-import clsx from "clsx";
+import type { EventDetails } from "~/server/services/event/schema";
+import { FormInput, FormTextarea } from "../components/Form";
 
 export type EventDetailsFieldErrors = typeToFlattenedError<
   EventDetails,
