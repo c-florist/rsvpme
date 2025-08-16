@@ -88,7 +88,7 @@ export default function CreateEventForm({
         className="w-full"
       />
 
-      <button type="submit" className="btn btn-primary">
+      <button type="submit" className="btn btn-primary btn-lg">
         Create event
       </button>
     </form>
